@@ -80,10 +80,8 @@
         <div class="curentPoint"><p>目前點數：{{newPointCount}}</p></div>
     </div>
     
-    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
     <script>
-        let socket = io();
-
         let vm = new Vue({
             el:'#app',
             data: {
@@ -92,12 +90,6 @@
                 pointCount:0,
                 stopAddBtn:0,
                 otherPointCount:0,
-            },
-            mounted() {
-                socket.emit('otherPoint', this.newPointCount)
-                socket.on('otherPoint', (points)=>{
-                    this.otherPointCount = points
-                })
             },
             methods: {
                 addCard(){
