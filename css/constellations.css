@@ -1,0 +1,110 @@
+.mask{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.startMask{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+}
+img{
+    width: 100%;
+}
+.star{
+    width: 120px;
+    top: calc(50% - 82px);
+    left: calc(50% - 60px);
+    cursor: pointer;
+    transition: 3s;
+}
+.star:hover{
+    transform: scale(1.5);
+}
+.startMask > img{
+    position: absolute;
+}
+.runCloud:nth-of-type(1){
+    animation: runCloud 6s linear 0s infinite alternate;
+}
+.runCloud:nth-of-type(2){
+    animation: runCloud 3s linear 0s infinite alternate;
+}
+@keyframes runCloud{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
+.cloud{
+    animation: cloudBye 2s linear 0s infinite normal;
+}
+@keyframes cloudBye{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.starWheel{
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    transform-origin: center;
+    animation: runStarWheel 360s linear 0s infinite normal;
+}
+@keyframes runStarWheel{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+form{
+    position: absolute;
+    margin: auto;
+    top: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+label{
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: seashell;
+}
+select{
+    margin: auto;
+    width: 110px;
+    height: 30px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border: 2px solid rgb(32, 30, 41);
+    color: #806a34;
+    background-color: rgb(4, 3, 15);
+}
+button{
+    margin: auto;
+    width: 55px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    color: seashell;
+    background-color: #806a34;
+}
+p{
+    text-align: center;
+    font-size: 50px;
+    color: seashell;
+}

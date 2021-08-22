@@ -5,83 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12星座</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/constellations.css">
+    <script src="js/constellationsBg.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
 </head>
 <body>
     <div id="app">
-        <form action="">
-            <label for="month">選擇出生月份：</label>
-            <select name="month" id="" v-model="theMonth">
-                <option v-for="(month, index) in months" :value="index">{{month}}月</option>
-            </select>
-            <label for="date">選擇出生日期：</label>
-            <select name="date" id="" v-model="theDate">
-                <option v-for="(date, index) in theDates" :value="index+1">{{index+1}}日</option>
-            </select>
-            <button type="button" @click="theConstellationIs">查詢</button>
-        </form>
-        <p>這日期的星座是 <span>{{theConstellation}}</span></p>
+        <div class="startMask" v-if="cloudGo">
+            <img class="" src="pic/cloud4.png">
+            <img class="" src="pic/cloud3.png">
+            <img class="runCloud" src="pic/cloud2.png">
+            <img class="runCloud" src="pic/cloud1.png">
+            <img class="star" src="pic/star.png" @click="startCheck">
+        </div>
+    
+        <div class="mask">
+            <img class="bg" src="pic/space.png">
+            <img class="starWheel" src="pic/starWheel.png">    
+            
+            <form>
+                <label for="month">選擇出生月份</label>
+                <select name="month" id="" v-model="theMonth">
+                    <option v-for="(month, index) in months" :value="index">{{month}}月</option>
+                </select>
+                <label for="date">選擇出生日期</label>
+                <select name="date" id="" v-model="theDate">
+                    <option v-for="(date, index) in theDates" :value="index+1">{{index+1}}日</option>
+                </select>
+                <button type="button" @click="theConstellationIs">查詢</button>
+            </form>
+            <p>{{theConstellation}}</p>
+        </div>   
     </div>
 
-    <script>
-        let vm = new Vue({
-            el:'#app',
-            data:{
-                months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-                dates:[31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-                Constellations:['牡羊座', '金牛座', '雙子座', '巨蟹座', '獅子座', '處女座', '天秤座', '天蠍座', '射手座', '魔羯座', '水瓶座', '雙魚座'],
-                theMonth:0,
-                theDate:1,
-                theConstellation:''
-            },
-            methods:{
-                theConstellationIs(){
-                    switch(this.months[this.theMonth]){
-                        case 1:
-                            this.theDate<20? this.theConstellation = this.Constellations[9] : this.theConstellation = this.Constellations[10]
-                            break
-                        case 2:
-                            this.theDate<19? this.theConstellation = this.Constellations[10] : this.theConstellation = this.Constellations[11]
-                            break
-                        case 3:
-                            this.theDate<21? this.theConstellation = this.Constellations[11] : this.theConstellation = this.Constellations[0]
-                            break
-                        case 4:
-                            this.theDate<20? this.theConstellation = this.Constellations[0] : this.theConstellation = this.Constellations[1]
-                            break
-                        case 5:
-                            this.theDate<21? this.theConstellation = this.Constellations[1] : this.theConstellation = this.Constellations[2]
-                            break
-                        case 6:
-                            this.theDate<21? this.theConstellation = this.Constellations[2] : this.theConstellation = this.Constellations[3]
-                            break
-                        case 7:
-                            this.theDate<23? this.theConstellation = this.Constellations[3] : this.theConstellation = this.Constellations[4]
-                            break
-                        case 8:
-                            this.theDate<23? this.theConstellation = this.Constellations[4] : this.theConstellation = this.Constellations[5]
-                            break
-                        case 9:
-                            this.theDate<23? this.theConstellation = this.Constellations[5] : this.theConstellation = this.Constellations[6]
-                            break
-                        case 10:
-                            this.theDate<23? this.theConstellation = this.Constellations[6] : this.theConstellation = this.Constellations[7]
-                            break
-                        case 11:
-                            this.theDate<22? this.theConstellation = this.Constellations[7] : this.theConstellation = this.Constellations[8]
-                            break
-                        case 12:
-                            this.theDate<22? this.theConstellation = this.Constellations[8] : this.theConstellation = this.Constellations[9]
-                            break
-                    }
-                }
-            },
-            computed:{
-                theDates(){
-                    return this.dates[this.theMonth]
-                },
-            }
-        })
-    </script>
+    <script src="js/constellationsVue.js"></script>
 </body>
 </html>
