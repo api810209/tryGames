@@ -3,6 +3,7 @@ let vm = new Vue({
     data:{
         cloudGo: true,
         formShow: false,
+        sectionShow: false,
         months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
         dates:[31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
         Constellations:['牡羊座', '金牛座', '雙子座', '巨蟹座', '獅子座', '處女座', '天秤座', '天蠍座', '射手座', '魔羯座', '水瓶座', '雙魚座'],
@@ -61,6 +62,7 @@ let vm = new Vue({
             document.getElementsByTagName('form')[0].setAttribute('class', 'formFadeOut')
             setTimeout(()=>{
                 this.formShow = false
+                this.sectionShow = true
             },800)
         }
     },
