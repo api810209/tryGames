@@ -64,6 +64,12 @@ let vm = new Vue({
                 this.formShow = false
                 this.sectionShow = true
             },800)
+        },
+        goback(){
+            document.getElementsByTagName('form')[0].removeAttribute('class')
+
+            this.formShow = true
+            this.sectionShow = false
         }
     },
     computed:{
