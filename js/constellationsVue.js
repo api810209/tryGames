@@ -2,6 +2,7 @@ let vm = new Vue({
     el:'#app',
     data:{
         cloudGo: true,
+        formShow: false,
         months:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
         dates:[31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
         Constellations:['牡羊座', '金牛座', '雙子座', '巨蟹座', '獅子座', '處女座', '天秤座', '天蠍座', '射手座', '魔羯座', '水瓶座', '雙魚座'],
@@ -11,12 +12,11 @@ let vm = new Vue({
     },
     methods:{
         startCheck(){
-            for (let time = 0; time < 4; time++) {
-                                
-            }
+            document.getElementsByClassName('startMask')[0].attributes['class'].value = 'startMask fadeOut'
             setTimeout(()=>{
                 this.cloudGo = false
-            },3000)
+                this.formShow = true
+            },4000)
         },
         theConstellationIs(){
             switch(this.months[this.theMonth]){
@@ -57,6 +57,11 @@ let vm = new Vue({
                     this.theDate<22? this.theConstellation = this.Constellations[8] : this.theConstellation = this.Constellations[9]
                     break
             }
+
+            document.getElementsByTagName('form')[0].setAttribute('class', 'fadeOut')
+            setTimeout(()=>{
+                this.formShow = false
+            },4000)
         }
     },
     computed:{

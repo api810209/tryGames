@@ -7,24 +7,21 @@
     <title>12星座</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/constellations.css">
-    <script src="js/constellationsBg.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
 </head>
 <body>
     <div id="app">
+        <!-- 開場 -->
         <div class="startMask" v-if="cloudGo">
-            <img class="" src="pic/cloud4.png">
-            <img class="" src="pic/cloud3.png">
-            <img class="runCloud" src="pic/cloud2.png">
-            <img class="runCloud" src="pic/cloud1.png">
-            <img class="star" src="pic/star.png" @click="startCheck">
+            <img class="runCloud" src="pic/Constellations/cloud1.png">
+            <img class="star" src="pic/Constellations/star.png" @click="startCheck">
         </div>
     
         <div class="mask">
-            <img class="bg" src="pic/space.png">
-            <img class="starWheel" src="pic/starWheel.png">    
+            <img class="bg" src="pic/Constellations/space.png">
+            <img class="starWheel" src="pic/Constellations/starWheel.png">    
             
-            <form>
+            <form v-show="formShow">
                 <label for="month">選擇出生月份</label>
                 <select name="month" id="" v-model="theMonth">
                     <option v-for="(month, index) in months" :value="index">{{month}}月</option>

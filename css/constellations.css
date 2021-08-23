@@ -27,29 +27,23 @@ img{
 .startMask > img{
     position: absolute;
 }
-.runCloud:nth-of-type(1){
+.runCloud{
     animation: runCloud 6s linear 0s infinite alternate;
-}
-.runCloud:nth-of-type(2){
-    animation: runCloud 3s linear 0s infinite alternate;
 }
 @keyframes runCloud{
     0%{
         transform: scale(1);
     }
     100%{
-        transform: scale(1.5);
+        transform: scale(1.05);
     }
 }
-.cloud{
-    animation: cloudBye 2s linear 0s infinite normal;
+.fadeOut{
+    animation: fadeOut 5s linear 0s infinite normal;
 }
-@keyframes cloudBye{
+@keyframes fadeOut{
     0%{
         opacity: 1;
-    }
-    50%{
-        opacity: 0;
     }
     100%{
         opacity: 0;
@@ -73,10 +67,21 @@ img{
 form{
     position: absolute;
     margin: auto;
-    top: 60vh;
     width: 100%;
+    top: 55vh;
     display: flex;
     flex-direction: column;
+    animation-name: formHello;
+    animation-duration: 2s;
+}
+@keyframes formHello{
+    0%{
+        top: 50vh;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 label{
     margin: auto;
