@@ -58,10 +58,10 @@ let vm = new Vue({
                     break
             }
 
-            document.getElementsByTagName('form')[0].setAttribute('class', 'fadeOut')
+            document.getElementsByTagName('form')[0].setAttribute('class', 'formFadeOut')
             setTimeout(()=>{
                 this.formShow = false
-            },4000)
+            },800)
         }
     },
     computed:{

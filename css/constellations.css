@@ -86,6 +86,9 @@ form{
         opacity: 1;
     }
 }
+.formFadeOut{
+    animation: fadeOut 1s linear 0s infinite normal;
+}
 label{
     margin: auto;
     margin-bottom: 10px;
@@ -113,7 +116,8 @@ button{
 }
 section{
     position: absolute;
-    top: 0;
+    width: 100%;
+    top: 55vh;
     z-index: 5;
 }
 p{
