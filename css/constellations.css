@@ -28,6 +28,7 @@ img{
     position: absolute;
 }
 .runCloud{
+    width: 1920px;
     animation: runCloud 6s linear 0s infinite alternate;
 }
 @keyframes runCloud{
@@ -50,6 +51,7 @@ img{
     }
 }
 .bg{
+    width: 1920px;
     animation: runCloud 10s linear 0s infinite alternate;
 }
 .starWheel{
