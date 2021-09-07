@@ -1,6 +1,18 @@
 body{
     background-image: url(../pic/food/pexels-fwstudio-172277.png);
 }
+button{
+    position: fixed;
+    top: 0;
+    margin: 30px 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    background-color: rgb(122, 110, 91);
+    cursor: pointer;
+}
 .desk{
     max-width: 1200px;
     margin: auto;

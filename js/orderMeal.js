@@ -1,3 +1,7 @@
+let btn = document.getElementById('btn')
+
+btn.addEventListener('click',()=> location.reload())
+
 let imgColor = document.querySelectorAll('.imgColor')
 let imgShadow = document.querySelectorAll('.imgShadow')
 
@@ -24,9 +28,11 @@ for(let i=0; i<imgColor.length; i++){
     function dragEnd(e){
         dragEndX = e.x
         dragEndY = e.y
+
         if(dragEndX == droppedX && dragEndY == droppedY){
             imgColor[i].style.visibility = 'hidden'
             imgShadow[i].setAttribute('src', newsrc)
+            count+=1
         }
     }
     
