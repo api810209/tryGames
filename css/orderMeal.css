@@ -1,0 +1,44 @@
+body{
+    background-image: url(../pic/food/pexels-fwstudio-172277.png);
+}
+.desk{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 140px;
+}
+[class^=roll]{
+    display: flex;
+    align-items: center;
+}
+.roll1,
+.roll4{
+    justify-content: center;
+}
+.roll1>img+img{
+    margin-left: 200px;
+}
+.roll2{
+    justify-content: flex-end;
+}
+.roll2>img+img,
+.roll3>img+img,
+.roll4>img+img{
+    margin-left: 100px;
+}
+.roll3{
+    justify-content: flex-start;
+}
+.items{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+.items>img{
+    width: 70px;
+    cursor: pointer;
+}
+.items>img+img{
+    margin-left: 20px;
+}
