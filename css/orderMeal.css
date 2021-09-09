@@ -14,13 +14,19 @@ button{
     cursor: pointer;
 }
 .desk{
-    max-width: 1200px;
+    max-width: 900px;
     margin: auto;
     margin-top: 140px;
 }
 [class^=roll]{
     display: flex;
     align-items: center;
+}
+[class^=roll]+[class^=roll]{
+    margin-top: 10px;
+}
+[class^=roll]>img{
+    width: 10%;
 }
 .roll1,
 .roll4{
@@ -41,16 +47,20 @@ button{
     justify-content: flex-start;
 }
 .items{
-    max-width: 1200px;
+    max-width: 900px;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 }
 .items>img{
-    width: 70px;
+    display: block;
+    margin-top: 40px;
+    width: 7%;
     cursor: pointer;
 }
 .items>img+img{
-    margin-left: 20px;
+    margin-left: 2%;
 }
