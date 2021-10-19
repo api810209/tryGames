@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <style>
+        h2,p{
+            text-align: center;
+            margin: 30px 0;
+        }
+        .row{
+            margin: auto;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 36px;
+        }
+        div[class^=col]{
+            background-color: rgb(100, 209, 195);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>壓板模擬</h2>
+    <p>容器寬度固定，無RWD，彈性縮放的空間有限，內容容易超出邊線，不適用字數多、字級大或是內容寬度寬。</p>
+    <div class="container">
+        <div class="row">
+          <div class="col-12">
+            1 of 1
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            1 of 2
+          </div>
+          <div class="col-6">
+            2 of 2
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            1 of 3
+          </div>
+          <div class="col-4">
+            2 of 3
+          </div>
+          <div class="col-4">
+            3 of 3
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            1 of 4
+          </div>
+          <div class="col-3">
+            2 of 4
+          </div>
+          <div class="col-3">
+            3 of 4
+          </div>
+          <div class="col-3">
+            4 of 4
+          </div>
+        </div>
+      </div>
+
+      <br><br><br>
+
+    <h2>關於RWD</h2>
+    <p>會隨著使用裝置的螢幕不同，去做相對應的變化。 一般建議配置12的因數(尤以偶數為佳)個容器一列，裝置變窄的時候，比較順眼。</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+              1 of 1
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              1 of 2
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              2 of 2
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              1 of 3
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              2 of 3
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              3 of 3
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              1 of 4
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              2 of 4
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              3 of 4
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              4 of 4
+            </div>
+          </div>
+      </div>
+</body>
+</html>
