@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今天我要不要做作業呢?</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        #app{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            display: block;
+            width: 100px;
+            height: 50px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(255, 255, 255);
+            background-color: rgb(53, 211, 163);
+            cursor: pointer;
+            transform: translate(0, 0);
+        }
+        button:hover{
+            animation: jump 1s linear infinite alternate;
+        }
+        @keyframes jump {
+            0%{
+                transform: translate(0, 10px);
+                background-color: rgb(51, 66, 153);
+            }
+            25%{
+                transform: translate(0, 0);
+                background-color: rebeccapurple;
+            }
+            50%{
+                transform: translate(0, 10px);
+                background-color: rgb(153, 51, 93);
+            }
+            75%{
+                transform: translate(0, 0);
+                background-color: rgb(153, 100, 51);
+            }
+            100%{
+                transform: translate(0, 10px);
+                background-color: rgb(83, 153, 51);
+            }
+        }
+
+        .hwCard{
+            padding: 20px;
+            width: 30%;
+            height: 10vh;
+            border-radius: 10px;
+            font-size: 28px;
+            text-align: center;
+            background-color: rgb(255, 243, 217);
+        }
+        .hwCard p{
+            margin-top: 50px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="showTheCard" v-show="hide">燈愣</button>
+        <div class="hwCard" v-show="show">{{whichOne}} <p>{{today}}</p></div>
+        
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                today: `日期：${new Date().getMonth()+1}月${new Date().getDate()}日`,
+                hide:true,
+                show:false,
+            },
+            methods: {
+                showTheCard(){
+                    this.hide = false
+                    this.show = true
+                }
+            },
+            computed: {
+                doOrNot(){
+                    return Math.floor(Math.random()*2)
+                },
+                whichOne(){
+                    if(this.doOrNot == 1){
+                        return '抽到作業惹!!!! 記得交作業喔~'
+                    }else{
+                        return '可惜沒抽到作業 ;w;'
+                    }
+                }
+            },
+        })
+
+    </script>
+</body>
+</html>
